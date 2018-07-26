@@ -22,7 +22,7 @@ X_train,X_test,y_train,y_test=train_test_split(data.drop('M',axis=1),data['M'],t
 
 input_dim = 30
 DROP_OUT = 0.1
-DENSE_DIM = 50
+DENSE_DIM = 100
 # Simple MLP model start
 
 
