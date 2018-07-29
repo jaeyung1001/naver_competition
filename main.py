@@ -19,6 +19,8 @@ data.drop('id',axis=1,inplace=True)
 
 
 X_train,X_test,y_train,y_test=train_test_split(data.drop('M',axis=1),data['M'],test_size=0.3)
+y_train = to_categorical(y_train,2)
+y_test = to_categorical(y_test,2)
 
 input_dim = 30
 DROP_OUT = 0.1
@@ -39,7 +41,7 @@ model.add(Dropout(DROP_OUT))
 #model.add(BatchNormalization())
 #model.add(Dense(DENSE_DIM, activation='elu'))
 #model.add(Dropout(DROP_OUT))
-model.add(Dense(1, activation='sigmoid'))
+model.add(Dense(2, activation='softmax'))
 
 
 
